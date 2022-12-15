@@ -1,0 +1,3 @@
+SOLID = "█"
+BLANK = "░"
+SAND  = "S"
