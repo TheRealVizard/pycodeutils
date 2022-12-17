@@ -30,5 +30,8 @@ jobs:
               with:
                   poetry-version: "1.2.2"
             - name: Publish
+              env:
+                  PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+                  PYPI_USERNAME: ${{ secrets.PYPI_API_USER }}
               run: |
-                  poetry publish --build --username ${{ secrets.PYPI_API_USER }} --password ${{ secrets.PYPI_API_TOKEN }}
+                  poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
